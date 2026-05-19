@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-5">
+        <div class="card p-5 shadow-sm text-center">
+            <i class="bi bi-shield-lock fs-1 text-primary mb-3"></i>
+            <h3 class="fw-bold">Вход в систему</h3>
+            <p class="text-muted small">Только для авторизованных сотрудников</p>
+            <form method="POST" class="mt-3 text-start">
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                    <label class="form-label">Логин</label>
+                    {{ form.login(class="form-control") }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Пароль</label>
+                    {{ form.password(class="form-control") }}
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Войти</button>
+            </form>
+            <div class="alert alert-info mt-3 small text-start">
+                <i class="bi bi-info-circle me-1"></i> Демо-данные: <code>admin</code> / <code>operator</code>, пароль: <code>123456</code>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Проверка статуса</h2>
+            <p class="text-muted">Введите уникальный код отслеживания</p>
+        </div>
+        <div class="card p-4 mb-4 shadow-sm">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-upc-scan"></i></span>
+                <input type="text" class="form-control" id="trackCode" placeholder="Например: APP-7F3A9C">
+                <button class="btn btn-primary" id="btnTrack">Найти</button>
+            </div>
+        </div>
+        <div id="trackResult" class="d-none card p-4 shadow-sm mb-3">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0" id="trTitle"></h4>
+                <span class="badge-status" id="trStatus"></span>
+            </div>
+            <div class="row g-2 mb-3 small">
+                <div class="col-6"><strong>Код:</strong> <code id="trCode"></code></div>
+                <div class="col-6"><strong>Тип:</strong> <span id="trType"></span></div>
+                <div class="col-6"><strong>Категория:</strong> <span id="trCat"></span></div>
+                <div class="col-6"><strong>Дата подачи:</strong> <span id="trDate"></span></div>
+            </div>
+            <p id="trDesc" class="text-muted mb-3"></p>
+            <hr>
+            <h6 class="fw-bold mb-3"><i class="bi bi-clock-history me-1"></i> История изменений</h6>
+            <div class="timeline-container" id="trTimeline"></div>
+        </div>
+        <div id="trackEmpty" class="text-center text-muted py-4 d-none">
+            <i class="bi bi-inbox fs-1 mb-2 d-block"></i>
+            <p>Обращение с таким кодом не найдено</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
